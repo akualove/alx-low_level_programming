@@ -6,27 +6,19 @@
  *main- genrate password
  *Return:nothing
  */
+ 
 int main(void)
 {
-srand((unsigned int)time(NULL));
-char pass[13];
-int i;
+int pass, sum;
 
-
-for (i = 0; i < 4; i++)
+srand(time(NULL));
+sum = 0;
+while (sum <= 2645)
 {
-
-pass[3 * i] = '0' + (rand() % 10);
-char capLetter = 'A' + (rand() % 26);
-
-pass[(3 * i) + 1] = capLetter;
-char letter = 'a' + (rand() % 26);
-
-pass[(3 * i) + 2] = letter;
+pass=(rand() % 128);
+sum += pass;
+printf(" %c", pass);
 }
-pass[3 * i] = '\0';
-printf("generated password : %s\n\n", pass);
-
-printf("\n\n");
+printf(" %c", 2772 - sum);
 return (0);
 }
