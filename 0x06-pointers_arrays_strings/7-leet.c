@@ -2,25 +2,24 @@
 
 /**
  * leet - encode
- * @s: pointer to char params
- * Return: *s
+ * @str: string that will be encoded
+ * Return: returns encoded string
  */
 
-char *leet(char *s)
+char *leet(char *str)
 {
-	int i;
-	int j;
-	char l[] = "ol_ea__t";
+	int index1 = 0, index2;
+	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
 
-	for (i = 0; s[i] != '\0'; i++)
+	while(str[++index1])
 	{
-		for (j = 0; l[j] != '\0'; j++)
+		for (index2 = 0; index2 <= 7; index2++)
 		{
-			if (s[i] == l[j] || s[i] == (l[j] - 32))
-			{
-				s[i] = j + '0';
-			}
+			if (str[index1] == leet[index2] || (str[index1] -32 == leet[index2])
+			
+				str[index1] = index2 + '0';
+			
 		}
 	}
-	return (s);
+	return (str);
 }
