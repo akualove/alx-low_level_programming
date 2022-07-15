@@ -1,24 +1,25 @@
 #include "main.h"
 
 /**
- *leet- converts  letters to num
- *@s: checked
- *Return: s
+ * leet - encode
+ * @s: pointer to char params
+ * Return: *s
  */
+
 char *leet(char *s)
 {
-	int i, j;
+	int i;
+	int j;
+	char l[] = "ol_ea__t";
 
-	char src[] = "aeotlAEOTL";
-	char dest[] = "4307143071";
-
-
-	for (i = 0; *(s + i); i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j < 10; j++)
+		for (j = 0; l[j] != '\0'; j++)
 		{
-			if (src[j] == *(s + i))
-				*(s + i) = dest[j];
+			if (s[i] == l[j] || s[i] == (l[j] - 32))
+			{
+				s[i] = j + '0';
+			}
 		}
 	}
 	return (s);
