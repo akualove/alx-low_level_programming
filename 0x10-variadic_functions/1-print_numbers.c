@@ -1,4 +1,7 @@
 #include "variadic_functions.h"
+#include <stdio.h>
+#include <stdarg.h>
+#include <stdlib.h>
 /**
  * print_numbers - prints numbers followed by a new line
  *
@@ -9,10 +12,6 @@
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	/* in this function print_numbers(", ", 4, 0, 98, -1024, 402); */
-	/* 4 is not printed because isthe unsigned int passed to the function */
-	/* meaning the total number of integers passed to the function */
-	va_list valist;
 	unsigned int runner;
 
 	va_start(valist, n);
